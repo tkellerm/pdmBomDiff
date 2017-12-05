@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE frame SYSTEM "urn:x-abas.de:abasscreens-1.00.dtd">
+
+<frame frameType="T">
+ <layout.grid>
+  <cell gridX="0" gridY="0">
+   <layout.grid>
+    <cell gridX="0" gridY="0">
+     <groupline msgId="92e736c2-83b5-4f42-ba8b-0e810320a2c0" />
+    </cell>
+    <cell gridX="1" gridY="0" sizeX="2">
+     <groupline msgId="867c3dda-d073-4406-91e4-789d3053afd7" />
+    </cell>
+    <cell gridX="3" gridY="0" sizeX="2">
+     <groupline msgId="b49bb767-bff3-4678-be2e-21b186d5614a" />
+    </cell>
+    <cell gridX="0" gridY="1">
+     <label msgId="5e584a9f-c5dc-4cf4-8356-c4e6fe7cf701" />
+    </cell>
+    <cell alignX="fill" gridX="1" gridY="1" sizeX="2">
+     <erpfield access="readOnly" s3Name="1:stdpdmzid" />
+    </cell>
+    <cell alignX="fill" gridX="3" gridY="1" sizeX="2">
+     <erpfield access="readOnly" s3Name="1:pdmzid" />
+    </cell>
+    <cell gridX="0" gridY="2">
+     <label msgId="5b20ed12-eef0-428f-8458-39efe2060037" />
+    </cell>
+    <cell gridX="1" gridY="2" sizeX="2">
+     <erpfield access="readOnly" s3Name="1:flzidstd" />
+    </cell>
+    <cell gridX="3" gridY="2" sizeX="2">
+     <erpfield access="readOnly" s3Name="1:flzid" />
+    </cell>
+    <cell gridX="0" gridY="3">
+     <label msgId="b860f671-4728-4c20-bf68-b7cbf6f3ea54" />
+    </cell>
+    <cell alignX="fill" gridX="1" gridY="3" sizeX="2">
+     <erpfield access="readOnly" dimY="3" s3Name="1:ptextstd" />
+    </cell>
+    <cell alignX="fill" gridX="3" gridY="3" sizeX="2">
+     <erpfield access="readOnly" dimY="3" s3Name="1:ptext" />
+    </cell>
+    <cell gridX="0" gridY="4">
+     <label msgId="02b039b4-18ec-415b-9669-2e8558f1e536" />
+    </cell>
+    <cell alignX="fill" gridX="1" gridY="4">
+     <erpfield access="readOnly" s3Name="1:pverluststd" />
+    </cell>
+    <cell gridX="2" gridY="4">
+     <label msgId="d8cdd11f-40c9-4c3b-b194-e1eefb4edcac" />
+    </cell>
+    <cell alignX="fill" gridX="3" gridY="4">
+     <erpfield access="readOnly" s3Name="1:pverlust" />
+    </cell>
+    <cell gridX="4" gridY="4">
+     <label msgId="c82e9275-ff02-49f3-a9be-402349a257e5" />
+    </cell>
+    <cell gridX="0" gridY="5">
+     <label msgId="258ae7af-1182-48c6-bed4-2b94213b515b" />
+    </cell>
+    <cell alignX="fill" gridX="1" gridY="5">
+     <erpfield access="readOnly" s3Name="1:vkpverluststd" />
+    </cell>
+    <cell gridX="2" gridY="5">
+     <label msgId="1a39da66-3248-41c4-8da2-22dffdac72d7" />
+    </cell>
+    <cell alignX="fill" gridX="3" gridY="5">
+     <erpfield access="readOnly" s3Name="1:vkpverlust" />
+    </cell>
+    <cell gridX="4" gridY="5">
+     <label msgId="01f3eef8-e317-4187-825a-4d08574673c6" />
+    </cell>
+    <cell gridX="0" gridY="6">
+     <label msgId="f57a6612-6e54-4d65-8a8a-e297481acba5" />
+    </cell>
+    <cell alignX="fill" gridX="1" gridY="6">
+     <erpfield access="readOnly" s3Name="1:amgestd" />
+    </cell>
+    <cell gridX="2" gridY="6">
+     <label msgId="a51252eb-285e-42e9-8d82-86fc72805a90" />
+    </cell>
+    <cell alignX="fill" gridX="3" gridY="6">
+     <erpfield access="readOnly" s3Name="1:amge" />
+    </cell>
+    <cell gridX="4" gridY="6">
+     <label msgId="6bc6fb45-f6ee-455a-9b4e-8b8e202f2fb5" />
+    </cell>
+    <cell gridX="0" gridY="7">
+     <label msgId="9ce67e67-113b-443e-a4c1-b70aab537e99" />
+    </cell>
+    <cell alignX="fill" gridX="1" gridY="7">
+     <erpfield access="readOnly" s3Name="1:varstd" />
+    </cell>
+    <cell gridX="2" gridY="7" />
+    <cell alignX="fill" gridX="3" gridY="7">
+     <erpfield access="readOnly" s3Name="1:var" />
+    </cell>
+    <cell gridX="4" gridY="7" />
+    <cell gridX="0" gridY="8">
+     <label msgId="21425e15-0dda-47a8-ad42-af7a1f4d7df6" />
+    </cell>
+    <cell gridX="1" gridY="8" sizeX="2">
+     <erpfield access="readOnly" s3Name="1:pzeitstd" />
+     <erpfield access="readOnly" s3Name="1:pzeitlestd" />
+    </cell>
+    <cell gridX="3" gridY="8" sizeX="2">
+     <erpfield access="readOnly" s3Name="1:pzeit" />
+     <erpfield access="readOnly" s3Name="1:pzeitle" />
+    </cell>
+    <cell alignY="beginning" gridX="0" gridY="9">
+     <label msgId="46f6aa09-16bc-48f8-8157-7b5c1ded3832" />
+    </cell>
+    <cell alignY="beginning" gridX="1" gridY="9" sizeX="2">
+     <erpfield access="readOnly" s3Name="1:tlzeitstd" />
+     <erpfield access="readOnly" s3Name="1:tlzeitlestd" />
+    </cell>
+    <cell alignY="beginning" gridX="3" gridY="9" sizeX="2">
+     <erpfield access="readOnly" s3Name="1:tlzeit" />
+     <erpfield access="readOnly" s3Name="1:tlzeitle" />
+    </cell>
+    <cell gridX="0" gridY="10">
+     <label msgId="d1e72755-7daf-4e7b-a512-53bd0263256a" />
+    </cell>
+    <cell alignX="fill" gridX="1" gridY="10">
+     <erpfield access="readOnly" s3Name="1:mzrsekstd" />
+    </cell>
+    <cell gridX="2" gridY="10">
+     <erpfield access="readOnly" s3Name="1:mzrstd" />
+    </cell>
+    <cell alignX="fill" gridX="3" gridY="10">
+     <erpfield access="readOnly" s3Name="1:mzrsek" />
+    </cell>
+    <cell gridX="4" gridY="10">
+     <erpfield access="readOnly" s3Name="1:mzr" />
+    </cell>
+    <cell gridX="0" gridY="11">
+     <label msgId="56390329-723a-48db-8ee2-cba448351fb5" />
+    </cell>
+    <cell alignX="fill" gridX="1" gridY="11">
+     <erpfield access="readOnly" s3Name="1:mzesekstd" />
+    </cell>
+    <cell gridX="2" gridY="11">
+     <erpfield access="readOnly" s3Name="1:mzestd" />
+    </cell>
+    <cell alignX="fill" gridX="3" gridY="11">
+     <erpfield access="readOnly" s3Name="1:mzesek" />
+    </cell>
+    <cell gridX="4" gridY="11">
+     <erpfield access="readOnly" s3Name="1:mze" />
+    </cell>
+    <cell gridX="0" gridY="12">
+     <label msgId="c9528071-13cd-4e12-9779-62102ced373b" />
+    </cell>
+    <cell gridX="1" gridY="12">
+     <erpfield access="readOnly" s3Name="1:lfbeiststd" />
+    </cell>
+    <cell gridX="2" gridY="12" />
+    <cell gridX="3" gridY="12">
+     <erpfield access="readOnly" s3Name="1:lfbeist" />
+    </cell>
+    <cell gridX="4" gridY="12" />
+    <cell gridX="0" gridY="13">
+     <label msgId="1d01e7cc-f059-4463-b5ff-30b5bfdf1751" />
+    </cell>
+    <cell gridX="1" gridY="13">
+     <erpfield access="readOnly" s3Name="1:tersatzstd" />
+    </cell>
+    <cell gridX="2" gridY="13" />
+    <cell gridX="3" gridY="13">
+     <erpfield access="readOnly" s3Name="1:tersatz" />
+    </cell>
+    <cell gridX="4" gridY="13" />
+    <cell gridX="0" gridY="14">
+     <label msgId="946c5b38-7923-44a8-80be-a2404638ba51" />
+    </cell>
+    <cell gridX="1" gridY="14">
+     <erpfield access="readOnly" s3Name="1:tverschltstd" />
+    </cell>
+    <cell gridX="2" gridY="14" />
+    <cell gridX="3" gridY="14">
+     <erpfield access="readOnly" s3Name="1:tverschlt" />
+    </cell>
+    <cell gridX="4" gridY="14" />
+    <cell gridX="0" gridY="15">
+     <label msgId="2e339359-068c-4e2b-8af0-5b2dda5017da" />
+    </cell>
+    <cell gridX="1" gridY="15">
+     <erpfield access="readOnly" s3Name="1:tnwpflichtstd" />
+    </cell>
+    <cell gridX="2" gridY="15" />
+    <cell gridX="3" gridY="15">
+     <erpfield access="readOnly" s3Name="1:tnwpflicht" />
+    </cell>
+    <cell gridX="4" gridY="15" />
+    <cell gridX="0" gridY="16">
+     <label msgId="4f2966ae-8e16-4b29-ac15-21892bfe3169" />
+    </cell>
+    <cell gridX="1" gridY="16">
+     <erpfield access="readOnly" s3Name="1:tserarchivstd" />
+    </cell>
+    <cell gridX="2" gridY="16" />
+    <cell gridX="3" gridY="16">
+     <erpfield access="readOnly" s3Name="1:tserarchiv" />
+    </cell>
+    <cell gridX="4" gridY="16" />
+   </layout.grid>
+  </cell>
+ </layout.grid>
+</frame>
+

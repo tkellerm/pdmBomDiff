@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.4
+Created-By: 1.8.0_121-b13 (Oracle Corporation)
+Implementation-Version: abas Version 2017r4n05
+Specification-Version: abas Version 2017r4n05
+Implementation-Vendor: abas Software AG
+Specification-Vendor: abas Software AG
+Implementation-URL: http://www.abas.de
+Artifact-Version: 2017.405.0.20170629135433
+
+Name: version
+ERP-Version: abas Version 2017r4n05
+built-by: dockerbau
+

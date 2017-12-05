@@ -1,0 +1,119 @@
+plugins {
+    id "java"
+    id "maven-publish"
+	id "de.abas.esdk" version "0.7.1"
+}
+
+repositories {
+    mavenLocal()
+    jcenter()
+    maven {url "https://plugins.gradle.org/m2/" }
+    maven { url "http://$NEXUS_HOST:$NEXUS_PORT/nexus/content/repositories/$NEXUS_NAME-SNAPSHOTS" }
+    maven { url "http://$NEXUS_HOST:$NEXUS_PORT/nexus/content/repositories/$NEXUS_NAME" }
+    
+}
+
+createApp.doLast {
+    copy {
+        from "src/main/groovy-scripts"
+        into "${createApp.outputDir}/groovy"
+    }
+}
+
+esdk {
+    app {
+        name="pdmBomDiff"
+        vendorId=""
+        appId=""
+        shared=true
+        infosystems = ["IS.OWPDM.IPDMBOMDIFF"]
+        tables = []
+        screens =[:] 
+        data = []
+        keys = []
+        enums = []
+        languages = "DE"
+    }
+
+    abas {
+        homeDir = ABAS_HOMEDIR
+        clientDir = ABAS_CLIENTDIR
+        clientId = ABAS_CLIENTID
+        edpHost = EDP_HOST
+        edpPort = EDP_PORT.toInteger()
+        edpUser = EDP_USER
+        edpPassword = EDP_PASSWORD
+    }
+
+    nexus {
+        nexusHost = NEXUS_HOST
+        nexusPort = NEXUS_PORT.toInteger()
+        nexusRepoName = NEXUS_NAME
+        nexusPassword = NEXUS_PASSWORD
+    }
+
+    ssh {
+        host = SSH_HOST
+        port = SSH_PORT.toInteger()
+        user = SSH_USER
+        password = SSH_PASSWORD
+        key = SSH_KEY
+    }
+    installType = "SSH"
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+compileJava {
+    options.encoding = "UTF-8"
+}
+
+configurations { compile.extendsFrom provided }
+configurations.findAll { it ->
+    it.exclude module: "abas-compliance"
+}
+group='pdmInterface'
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId 'pdmInterface'
+            artifactId 'PdmBomDiff'
+            artifact "build/libs/${project.name}-standalone-app.jar"
+        }
+    }
+    repositories {
+        if(project.hasProperty("nexusSnapshotURL") && project.hasProperty("nexusReleaseURL")
+                && project.hasProperty("nexusUser") && project.hasProperty("nexusPassword")){
+            if(project.version.endsWith('-SNAPSHOT')) {
+                maven {
+                    url nexusSnapshotURL
+                    credentials {
+                        username nexusUser
+                        password nexusPassword
+                    }
+                }
+            } else {
+                maven {
+                    url nexusReleaseURL
+                    credentials {
+                        username nexusUser
+                        password nexusPassword
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+dependencies {
+    provided 'de.abas.homedir:log4j:1.0.0'
+   
+  
+
+
+}

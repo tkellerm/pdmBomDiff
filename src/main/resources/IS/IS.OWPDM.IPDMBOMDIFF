@@ -1,0 +1,192 @@
+V#21
+K#0#IPDMBOMDIFF#Fertigungslistenvergleich f�r PDM-Artikel#(65)#isrein/screen.OWPDM.IPDMBOMDIFF#2.21.1.1, 25B.1##
+K#(0)#(2)#55560023##0#0#PdmBOMDifferences#1
+K#0#(1)#
+K#owpdm/PDMBOMDIFF.SE#####
+K#######
+K#owpdm#(2)#2:1#(116)#(98)###0#0#
+K#is/VERBOTEN##is/VERBOTEN######
+Z#0#itgrust##0####(0)######0#0#0#0##0##
+Z#0#itgruppe##0####(0)######0#2#0#0##0##
+Z#0#itgrbez##0####(0)######0#2#0#0##0##
+Z#0#itsn##0####(0)######0#0#0#0##0##
+Z#0#itid##0####(0)######0#2#0#0##0##
+Z#0#itdnr##0####(0)######0#0#0#0##0##
+Z#0#itdbez##0####(0)######0#2#0#0##0##
+Z#0#itobjgruppe##0####(0)######0#0#0#0##0##
+Z#0#itobjgrbez##0####(0)######0#2#0#0##0##
+Z#0#itobjdnr##0####(0)######0#0#0#0##0##
+Z#0#itobjdbez##0####(0)######0#2#0#0##0##
+Z#0#itobjinzeile##0####(0)######0#0#0#0##0##
+Z#0#itozeilen##0####(0)######0#0#0#0##0##
+Z#0#itdateiarchivieren##0####(0)######0#0#0#0##0##
+Z#0#itbudruck##0####(1)######0#0#0#0##0##
+Z#0#itbudruck2##0####(1)######0#0#0#0##0##
+Z#0#itbuinfosys##0####(1)######0#0#0#0##0##
+Z#0#itbuaktion##0####(1)######0#0#0#0##0##
+Z#0#itversionn##0####(0)######0#0#0#0##0##
+Z#0#itablagen##0####(0)######0#0#0#0##0##
+Z#0#itablagef##0####(0)######0#2#0#0##0##
+Z#0#itnum65##0####(0)######0#0#0#0##0##
+Z#0#itnummer##0####(0)######0#2#0#0##0##
+Z#0#itnummerb##0####(0)######0#2#0#0##0##
+Z#0#itsuch65##0####(0)######0#0#0#0##0##
+Z#0#itsuch##0####(0)######0#2#0#0##0##
+Z#0#itsuchb##0####(0)######0#2#0#0##0##
+Z#0#isarb##0####(0)######0#0#0#0##0##
+Z#0#israngarb##0####(0)######0#0#0#0##0##
+Z#0#isdatname##0####(0)######0#0#0#0##0##
+Z#0#isdn##0####(0)######0#2#0#0##0##
+Z#0#isdatnr##0####(0)######0#2#0#0##0##
+Z#0#isgrp##0####(0)######0#0#0#0##0##
+Z#0#isgrliste##0####(0)######0#0#0#0##0##
+Z#0#isgrtxt##0####(0)######0#0#0#0##0##
+Z#0#isgrausw##0####(1)######0#0#0#0##0##
+Z#0#isbkopf##0####(1)######0#0#0#0##0##
+Z#0#isbfuss##0####(1)######0#0#0#0##0##
+Z#0#isgrkopf##0####(1)######0#0#0#0##0##
+Z#0#isgrfuss##0####(1)######0#0#0#0##0##
+Z#0#istab##0####(1)######0#0#0#0##0##
+Z#0#isbtyp##0####(1)######0#0#0#0##0##
+Z#0#isatyp##0####(1)######0#0#0#0##0##
+Z#0#isageraet##0####(1)######0#0#0#0##0##
+Z#0#isaparam##0####(1)######0#0#0#0##0##
+Z#0#ismaxlines##0####(1)######0#0#0#0##0##
+Z#0#isanzstufen##0####(1)######0#0#0#0##0##
+Z#0#istreeview##0####(0)######0#0#0#0##0##
+Z#0#isabbrfrage##0####(1)######0#0#0#0##0##
+Z#0#ismenuetitel##0####(0)######0#0#0#0##0##
+Z#0#ismenuevorauswahl##0####(0)######0#0#0#0##0##
+Z#0#ismenuesofort##0####(0)######0#0#0#0##0##
+Z#0#ismenueokay##0####(1)######0#0#0#0##0##
+Z#0#ismenueabbruch##0####(1)######0#0#0#0##0##
+Z#0#isabbrfragetxt##0####(1)######0#0#0#0##0##
+Z#0#isisref##0####(0)######0#0#0#0##0##
+Z#0#isselect##0####(1)######0#0#0#0##0##
+Z#0#isauswahl##0####(1)######0#0#0#0##0##
+Z#0#isstufe##0####(1)######0#0#0#0##0##
+Z#0#isbstart##0####(1)#owpdm/PDMBOMDIFF.BSTART.BB#owpdm/PDMBOMDIFF.BSTART.BA####1#0#0#0##0##
+Z#0#isstartzeit##0####(0)######0#0#0#0##0##
+Z#1#ispdmstatus#AZL10050#0#PDM-Artikelstatus#(65)#(65)#(2)#####owpdm/PDMBOMDIFF.EV#1#1#0#0##0##
+Z#1#isapdm#B#0#PDM-gesteuert#(65)#(65)#(0)######1#1#0#0##0##
+Z#1#isartikel#P2:1#0#Artikel#(65)#(65)#(1)####owpdm/PDMBOMDIFF.EV#owpdm/PDMBOMDIFF.EV#1#1#0#0##0##
+Z#1#isnamebspr#PT2:1#0#Artikelbezeichnung#(65)#(65)#(0)######1#3#0#0##0##
+Z#1#islgruppe#PS39:2#0#Lagergruppe#(65)#(65)#(1)####owpdm/PDMBOMDIFF.EV#owpdm/PDMBOMDIFF.EV#1#1#0#0##0##
+Z#1#islgrnamebspr#PT39:2#0#Lagergruppe#(65)#(65)#(0)######1#3#0#0##0##
+Z#1#isfliste#PS128:1#0#Aktuelle Fertigungsliste#(65)#(65)#(3)######1#1#0#0##0##
+Z#1#isflbasis#MP6.4#0#Fertigungslistenbasis#(65)#(65)#(3)######1#1#0#0##0##
+Z#1#isle#TAZ1#0#Einheit#(65)#(65)#(3)######1#1#0#0##0##
+Z#1#isnrfliste#GL8#0#Nummer aktuelle Fertigungsliste#(65)#(65)#(0)######1#1#0#0##0##
+Z#1#isstdflaendern#BU3#0#Standardfertigungsliste �ndern#(65)#(65)#(1)######1#1#0#0##0##
+Z#1#isflaendern#BU3#0#Fertigungsliste �ndern#(65)#(65)#(1)#owpdm/PDMBOMDIFF.FLAENDERN.BB#is/TABLEEREN####1#1#0#0##0##
+Z#1#isflistestd#PS128:1#0#Standardfertigungsliste#(65)#(65)#(3)######1#1#0#0##0##
+Z#1#isnrflistestd#GL8#0#Nummer der Standardfertigungsliste#(65)#(65)#(0)######1#1#0#0##0##
+Z#1#isflbasisstd#MP6.4#0#Fertigungslistenbasis#(65)#(65)#(3)######1#1#0#0##0##
+Z#1#isbneuestdfl#BU3#0#Neue Standardfertigungsliste erstellen#(65)#(65)#(1)#owpdm/PDMBOMDIFF.BB#owpdm/PDMBOMDIFF.BA####1#1#0#0##0##
+Z#1#isbneuefl#BU3#0#Neue Fertigungsliste erstellen#(65)#(65)#(1)#owpdm/PDMBOMDIFF.BB#owpdm/PDMBOMDIFF.BA####1#1#0#0##0##
+Z#1#ispdm#B#0#PDM-konfiguriert#(65)#(65)#(0)######1#1#0#0##0##
+Z#1#issuchneu#SW128#0#Suchwort f�r die neue Fertigungsliste#(65)#(65)#(2)######1#1#0#0##0##
+Z#1#isselectstd#GL#0#Datenbankanfrage f�r die Standardfertigungsliste#(65)#(65)#(2)######0#1#0#0##0##
+Z#1#isselectnonstd#GL#0#Datenbankanfrage f�r die letzte Fertigungsliste#(65)#(65)#(2)######0#1#0#0##0##
+Z#1#isnoloesch#B#0#Keine Standardfertigungsliste anlegen#(65)#(65)#(2)######0#1#0#0##0##
+Z#1#isfarbe1#GL11#0#Farbe#(65)#(65)#(2)######0#1#0#0##0##
+Z#1#isfarbe2#GL11#0#Farbe#(65)#(65)#(2)######0#1#0#0##0##
+Z#0#ittabnr##1####(0)######0#0#0#0##0##
+Z#0#itzid##1####(0)######0#0#0#0##0##
+Z#0#itzn##1####(0)######0#0#0#0##0##
+Z#0#itbudruck##1####(1)######0#0#0#0##0##
+Z#0#itbudruck2##1####(1)######0#0#0#0##0##
+Z#0#itbuinfosys##1####(1)######0#0#0#0##0##
+Z#0#itbuaktion##1####(1)######0#0#0#0##0##
+Z#0#itmarkiert##1####(1)######0#0#0#0##0##
+Z#0#itmarkierung##1####(1)######0#0#0#0##0##
+Z#0#istbaumstufe##1####(0)######0#0#0#0##0##
+Z#0#istbaumstat##1####(0)######0#0#0#0##0##
+Z#0#istbaumaufzu##1####(1)######0#0#0#0##0##
+Z#0#istbaumtext##1####(0)######0#0#0#0##0##
+Z#0#istbauminfo##1####(0)######0#0#0#0##0##
+Z#0#istbaumicon##1####(0)######0#0#0#0##0##
+Z#0#istbaumiconz##1####(0)######0#2#0#0##0##
+Z#0#istmenuemoeglich##1####(0)######0#0#0#0##0##
+Z#0#istmenueaktion##1####(0)######0#0#0#0##0##
+Z#0#istmenuean##1####(0)######0#0#0#0##0##
+Z#2#isstdpdmpos#IP5#1#PDM-Pos#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isstdpdmzid#GLA36#1#PDM-ID#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isflzidstd#GL30#1#Fertigungslistenposition Zeilen-ID#(65)#(65)#(0)######0#1#0#0##0##
+Z#2#isvposstd#GL6#1#Positionsnummer#(65)#(65)#(0)######1#1#0#0#Pos#0##
+Z#2#iselexstd#VPK1#1#Sachnummer#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#iselnamestd#GL32#1#Bezeichnung#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#islgestd#MPN5.2#1#L�nge/tr#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isellmestd#TAZ1#1#Einheit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isbreitestd#MPN5.2#1#Breite/te#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#iselbmestd#TAZ1#1#Einheit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isanzahlstd#M4.4#1#Anzahl#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#ismellestd#TAZ1#1#Einheit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isnutzenstd#MP4.4#1#Nutzen#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isbustd#A14#1#Bereitstellung/�bergang#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#ismgrstd#P8:2#1#Maschinengruppe#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#islgrstd#IP3#1#Lohngruppe#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#issel1#B#1#Selektion1#(65)#(65)#(2)#####owpdm/PDMBOMDIFF.EV#1#1#0#0##0##
+Z#2#isfilterstd#PS139:1#1#Filter#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isfiltervglstd#GL20#1#Filtervergleichswert#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isfiltervgl2std#GL20#1#Filtervergleichswert2#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isptextstd#T35#1#Positionstext#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#ispverluststd#MP2.2#1#Ausschuss in % (Disposition)#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isvkpverluststd#M3.2#1#Ausschuss in % (Vorkalkulation)#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isamgestd#ARTR51000#1#Anfahrmenge in Lagereinheit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isvarstd#A13#1#Variantenk�rzel#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#ispzeitstd#IP4#1#Pufferzeit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#ispzeitlestd#A80#1#Pufferzeiteinheit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#istlzeitstd#IP4#1#Transport- und Liegezeit in �bergangszeiteinheit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#istlzeitlestd#A80#1#�bergangszeiteinheit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#ismzrsekstd#MPN5.4#1#Sekunden pro R�stzeiteinheit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#ismzrstd#TAZ1#1#R�stzeiteinheit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#ismzesekstd#MPN5.4#1#Sekunden pro Einzelzeiteinheit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#ismzestd#TAZ1#1#Einzelzeiteinheit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#islfbeiststd#B#1#Beistellteil f�r Lohnfertigung#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#istersatzstd#B#1#Ersatzteil#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#istverschltstd#B#1#Verschlei�teil#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#istnwpflichtstd#B#1#Nachweispflicht#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#istserarchivstd#B#1#Ausf�hrliche Archivierung#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#ispdmpos#IP5#1#PDM-Pos#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#ispdmzid#GLA36#1#PDM ID#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isflzid#GL30#1#Fertigungslistenposition Zeilen-ID#(65)#(65)#(0)######0#1#0#0##0##
+Z#2#isvpos#GL6#1#Positionsnummer#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#iselex#VPK1#1#Sachnummer#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#iselname#GL32#1#Bezeichnung#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#islge#MPN5.2#1#L�nge/tr#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isellme#TAZ1#1#Einheit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isbreite#MPN5.2#1#Breite/te#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#iselbme#TAZ1#1#Einheit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isanzahl#M4.4#1#Anzahl#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#ismelle#TAZ1#1#Einheit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isnutzen#MP4.4#1#Nutzen#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isbu#A14#1#Bereitstellung/�bergang#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#ismgr#P8:2#1#Maschinengruppe#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#islgr#IP3#1#Lohngruppe#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#issel2#B#1#Selektion2#(65)#(65)#(2)#####owpdm/PDMBOMDIFF.EV#1#1#0#0##0##
+Z#2#isloesch#B#1#L�schen#(65)#(65)#(2)#####owpdm/PDMBOMDIFF.EV#1#1#0#0##0##
+Z#2#isfilter#PS139:1#1#Filter#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isfiltervgl#GL20#1#Filtervergleichswert#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isfiltervgl2#GL20#1#Filtervergleichswert2#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isptext#T35#1#Positionstext#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#ispverlust#MP2.2#1#Ausschuss in % (Disposition)#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isvkpverlust#M3.2#1#Ausschuss in % (Vorkalkulation)#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isamge#ARTR51000#1#Anfahrmenge in Lagereinheit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#isvar#A13#1#Variantenk�rzel#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#ispzeit#IP4#1#Pufferzeit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#ispzeitle#A80#1#Pufferzeiteinheit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#istlzeit#IP4#1#Transport- und Liegezeit in �bergangszeiteinheit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#istlzeitle#A80#1#�bergangszeiteinheit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#ismzrsek#MPN5.4#1#Sekunden pro R�stzeiteinheit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#ismzr#TAZ1#1#R�stzeiteinheit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#ismzesek#MPN5.4#1#Sekunden pro Einzelzeiteinheit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#ismze#TAZ1#1#Einzelzeiteinheit#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#islfbeist#B#1#Beistellteil f�r Lohnfertigung#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#istersatz#B#1#Ersatzteil#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#istverschlt#B#1#Verschlei�teil#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#istnwpflicht#B#1#Nachweispflicht#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#istserarchiv#B#1#Ausf�hrliche Archivierung#(65)#(65)#(0)######1#1#0#0##0##
+Z#2#istdiffcode#IP1#1#Differenz Code#(65)#(65)#(0)######0#1#0#0##0##
+Z#2#isybelast#NT5#1#Belastung#(65)#(65)#(0)######1#1#1#0##1##
+Z#2#isybelaststd#NT5#1#Belastung Standard#(65)#(65)#(0)######1#1#1#0##1##

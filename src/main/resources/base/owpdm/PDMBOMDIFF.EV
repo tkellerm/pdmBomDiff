@@ -1,0 +1,113 @@
+..!interpreter english translate noabbrev
+..*****************************************************************************
+.. Name           : PDMBOMDIFF.EV
+.. Author         : cl
+.. Verantwortlich : cl
+.. Kontrolle      : fwester
+.. Functionality  : Validates inputs and sets production lists.
+..*****************************************************************************
+.set trans -
+.type ID128:1 xtmpstdfl xtmpfl
+..
+.continue VALPROD ? G|evtartengl = "FIELD_VALIDATION" & G|evtvar = "artikel"
+.continue EXTPROD ? G|evtartengl = "FIELD_EXIT"       & G|evtvar = "artikel"
+.continue VALWARE ? G|evtartengl = "FIELD_VALIDATION" & G|evtvar = "lgruppe"
+.continue EXTWARE ? G|evtartengl = "FIELD_EXIT"       & G|evtvar = "lgruppe"
+.continue CLRTAB  ? G|evtartengl = "FIELD_EXIT"       & G|evtvar = "pdmstatus"
+.continue RADIOBU ? G|evtartengl = "FIELD_EXIT"       & G|evtvar = "sel1"
+.continue RADIOBU ? G|evtartengl = "FIELD_EXIT"       & G|evtvar = "sel2"
+.continue RADIOBU ? G|evtartengl = "FIELD_EXIT"       & G|evtvar = "loesch"
+.continue END
+..
+!RADIOBU: eines der Boolfelder setzen
+.copy M|sel1   = G|FALSE   ? M|sel1    & G|evtvar <> "sel1"
+.copy M|sel2   = G|FALSE   ? M|sel2    & G|evtvar <> "sel2"
+.copy M|loesch = G|FALSE   ? M|loesch  & G|evtvar <> "loesch"
+.continue END
+..
+!VALPROD: Validate product
+.continue END     ?  F|empty(M|artikel)
+.continue END     ?  F|empty(M|lgruppe)
+.continue ERROR01 ? _M|artikel^pdm
+..
+.. Standard production list must have product and warehouse.
+.assign U|xtmpstdfl = F|formatstr(M|selectstd, "$", M|artikel^id, M|lgruppe^id)
+.continue ERROR03 ? _G|mehr
+..
+.. Others must have the same product.
+.assign U|xtmpfl = F|formatstr(M|selectnonstd, "$", M|artikel^id)
+.continue ERROR04 ? _G|mehr
+..
+.. Braucht man, um vollbesemmelten Kern auszutricksen.
+.copy M|artikel = M|artikel
+.copy M|flistestd = U|xtmpstdfl
+.copy M|fliste = U|xtmpfl
+.continue END
+..
+!EXTPROD: Exit after input product
+.continue CLRHEAD ? F|empty(M|artikel) ; F|empty(M|lgruppe)
+.copy M|apdm = M|artikel^pdm
+.assign M|pdmstatus = M|artikel^pdmstatus
+.formula M|le = M|artikel^le
+.continue PLSTOUT
+..
+!VALWARE: Validate warehouse
+.continue END ? F|empty(M|artikel)
+.continue END ? F|empty(M|lgruppe)
+.. Standard production list must have product and warehouse.
+.assign U|xtmpstdfl = F|formatstr(M|selectstd, "$", M|artikel^id, M|lgruppe^id)
+.continue ERROR03 ? _G|mehr
+..
+.. Others must have the same product.
+.assign U|xtmpfl = F|formatstr(M|selectnonstd, "$", M|artikel^id)
+.continue ERROR04 ? _G|mehr
+..
+.. Braucht man, um vollbesemmelten Kern auszutricksen.
+.copy M|lgruppe = M|lgruppe
+.copy M|flistestd = U|xtmpstdfl
+.copy M|fliste = U|xtmpfl
+.continue END
+..
+!EXTWARE: Exit after input warehouse
+.continue CLRHEAD ? F|empty(M|artikel) ; F|empty(M|lgruppe)
+..
+!PLSTOUT: Update output field of production lists
+.formula M|nrflistestd = M|flistestd^nummer
+.formula M|flbasisstd = M|flistestd^flbasis
+.formula M|nrfliste = M|fliste^nummer
+.formula M|flbasis = M|fliste^flbasis
+.continue CLRTAB
+..
+!CLRHEAD: Clear header
+.copy M|apdm = M|artikel^pdm
+.formula M|pdmstatus = ""
+.formula M|flistestd = ""
+.formula M|nrflistestd = ""
+.formula M|fliste = ""
+.formula M|nrfliste = ""
+.formula M|flbasisstd = 0
+.formula M|flbasis = 0
+..
+!CLRTAB: Clear table
+.input "is/TABLEEREN"
+..*****************************************************************************
+!END
+.continue
+..*****************************************************************************
+.set trans +
+..
+!ERROR01: Wrong product.
+.error -field M|artikel -message Der Artikel ist nicht PDM-gesteuert!
+.end 1
+..
+!ERROR02: Missing product.
+.error -field M|artikel -message Bitte den Artikel eintragen!
+.end 1
+..
+!ERROR03: No standard production list.
+.error -field M|artikel -message Es wurde keine Standardfertigungsliste gefunden!
+.end 1
+..
+!ERROR04: No further production list found!
+.error -message Es wurde keine zweite Fertigungsliste gefunden!
+.end 1

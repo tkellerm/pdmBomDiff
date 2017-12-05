@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE frame SYSTEM "urn:x-abas.de:abasscreens-1.00.dtd">
+
+<frame frameType="M" msgId="0d68b9735f24418074a7408f847833fe">
+ <layout.grid>
+  <metainfo axis="column" grid="0" stretch="zoom" />
+  <metainfo axis="row" grid="0" stretch="zoom" />
+  <cell alignX="fill" alignY="fill" gridX="0" gridY="0">
+   <layout.split axis="row">
+    <pane.split>
+     <layout.grid>
+      <cell gridX="0" gridY="0">
+       <layout.grid>
+        <cell gridX="0" gridY="0">
+         <label msgId="f0d33eef-fcea-4827-977b-ccd388206fc0" />
+        </cell>
+        <cell alignX="fill" gridX="1" gridY="0">
+         <erpfield s3Name="0:artikel" />
+        </cell>
+        <cell gridX="2" gridY="0">
+         <erpfield access="readOnly" s3Name="0:namebspr" />
+        </cell>
+        <cell gridX="3" gridY="0" />
+        <cell gridX="4" gridY="0">
+         <label msgId="0a1eafdf-6017-40f3-8d3e-bfe2d5f59ad8" />
+        </cell>
+        <cell gridX="5" gridY="0">
+         <erpfield access="readOnly" s3Name="0:apdm" />
+        </cell>
+        <cell gridX="0" gridY="1">
+         <label msgId="6eb754c5-7d4f-48ba-b483-c05d02232900" />
+        </cell>
+        <cell alignX="fill" gridX="1" gridY="1">
+         <erpfield s3Name="0:lgruppe" />
+        </cell>
+        <cell gridX="2" gridY="1">
+         <erpfield access="readOnly" s3Name="0:lgrnamebspr" />
+        </cell>
+        <cell gridX="3" gridY="1" />
+        <cell gridX="4" gridY="1">
+         <label msgId="43d78095-7f05-4a7d-973e-35b71619c410" />
+        </cell>
+        <cell alignX="fill" gridX="5" gridY="1">
+         <erpfield s3Name="0:pdmstatus" />
+        </cell>
+        <cell gridX="0" gridY="2">
+         <label msgId="e60d1d45-529b-42a7-b44f-d565f7a12141" />
+        </cell>
+        <cell gridX="1" gridY="2" sizeX="2">
+         <erpfield s3Name="0:suchneu" />
+        </cell>
+        <cell gridX="3" gridY="2" />
+        <cell gridX="4" gridY="2" />
+        <cell alignX="fill" gridX="5" gridY="2" />
+        <cell gridX="0" gridY="3" sizeX="3">
+         <groupline msgId="d5fe9227-40bd-45e5-a543-3f4428cc5fdf" />
+        </cell>
+        <cell alignX="fill" gridX="3" gridY="3" />
+        <cell gridX="4" gridY="3" sizeX="2">
+         <groupline msgId="774d4c3e-b003-46f0-8e8e-08b24398bc7e" />
+        </cell>
+        <cell gridX="0" gridY="4">
+         <label msgId="e5b3a10f-a8ff-46c2-81b8-fe14a9596a57" />
+        </cell>
+        <cell gridX="1" gridY="4" sizeX="2">
+         <erpfield access="readOnly" s3Name="0:nrflistestd" />
+         <erpfield access="readOnly" s3Name="0:flistestd" />
+        </cell>
+        <cell alignX="fill" gridX="3" gridY="4">
+         <erpfield dimX="0" msgId="6866fef4-3558-413e-b36e-20f12858447e" s3Name="0:bneuefl" />
+        </cell>
+        <cell gridX="4" gridY="4">
+         <label msgId="25ed09ef-25ad-491e-8db9-20713c5d550c" />
+        </cell>
+        <cell gridX="5" gridY="4">
+         <erpfield access="readOnly" s3Name="0:nrfliste" />
+         <erpfield access="readOnly" s3Name="0:fliste" />
+         <erpfield dimX="0" msgId="27aecf64-a830-4d85-8e58-d4451d5cfed7" s3Name="0:flaendern" />
+        </cell>
+        <cell gridX="0" gridY="5">
+         <label msgId="93747543-9341-4c06-b022-71d627b45c33" />
+        </cell>
+        <cell gridX="1" gridY="5">
+         <erpfield access="readOnly" s3Name="0:flbasisstd" />
+         <erpfield access="readOnly" s3Name="0:le" />
+        </cell>
+        <cell gridX="2" gridY="5" />
+        <cell alignX="fill" gridX="3" gridY="5">
+         <erpfield dimX="0" msgId="1c06e221-4f7f-4e47-9ae9-c71e459d2c61" s3Name="0:bneuestdfl" />
+        </cell>
+        <cell gridX="4" gridY="5">
+         <label msgId="4733a6f0-4459-44d8-a706-44f716a7bcdb" />
+        </cell>
+        <cell gridX="5" gridY="5">
+         <erpfield access="readOnly" s3Name="0:flbasis" />
+         <erpfield access="readOnly" s3Name="0:le" />
+        </cell>
+        <cell gridX="0" gridY="6" />
+        <cell gridX="1" gridY="6" sizeX="2" />
+        <cell gridX="3" gridY="6" />
+        <cell gridX="4" gridY="6" />
+        <cell gridX="5" gridY="6" />
+       </layout.grid>
+      </cell>
+     </layout.grid>
+    </pane.split>
+    <pane.split>
+     <table>
+      <erpfield access="readOnly" dimX="0" msgId="dcfdb8a2-4bb1-4112-afc1-f4fa598db88a" s3Name="1:stdpdmpos" />
+      <erpfield access="readOnly" dimX="0" msgId="8ebe49b2-a6a3-486f-b4ae-51b18661ea6c" s3Name="1:vposstd" />
+      <erpfield access="readOnly" dimX="0" msgId="d3077c0e-6e68-4696-93a4-cd60de8fc738" s3Name="1:elexstd" />
+      <erpfield access="readOnly" dimX="0" msgId="1bc9c4cf-9c16-4ef0-aae5-bca6f4fc9bad" s3Name="1:elnamestd" />
+      <erpfield access="readOnly" dimX="0" msgId="e941604f-9846-4808-a12c-1801d5da1340" s3Name="1:lgestd" />
+      <erpfield access="readOnly" dimX="0" msgId="f94c763d-fb7d-479b-b7f2-826d335d999c" s3Name="1:ellmestd" />
+      <erpfield access="readOnly" dimX="0" msgId="4dd653ac-0d6e-4531-b8a3-f9998d8524f6" s3Name="1:breitestd" />
+      <erpfield access="readOnly" dimX="0" msgId="851e7db9-8916-476e-af84-70438c0df930" s3Name="1:elbmestd" />
+      <erpfield access="readOnly" dimX="0" msgId="735f502d-a2d0-493a-98fc-76d1b0136ef8" s3Name="1:anzahlstd" />
+      <erpfield access="readOnly" dimX="0" msgId="eea55585-4a86-4789-9a32-fa6e2b6e7132" s3Name="1:mellestd" />
+      <erpfield access="readOnly" msgId="ipdmbomdiff_owpdm_ftable_ybelaststd" s3Name="1:ybelaststd" />
+      <erpfield access="readOnly" dimX="0" msgId="e6f4d141-b199-4044-b33d-7dd20cc832a2" s3Name="1:nutzenstd" />
+      <erpfield access="readOnly" dimX="0" msgId="b90501fa-0b41-4eee-b449-ccfaa0ec80f3" s3Name="1:bustd" />
+      <erpfield access="readOnly" dimX="0" msgId="c439ba3c-965a-4883-b078-936b14e5258c" s3Name="1:mgrstd" />
+      <erpfield access="readOnly" dimX="0" msgId="3b917a02-dbfc-4567-b064-99f65fcc34f6" s3Name="1:lgrstd" />
+      <erpfield access="readOnly" dimX="0" msgId="c1b9f613-c19a-4fd0-aeb0-372e1d0f7775" s3Name="1:filterstd" />
+      <erpfield access="readOnly" dimX="0" msgId="45dc82bc-7e63-4cff-867d-10b7abddf0bd" s3Name="1:filtervglstd" />
+      <erpfield access="readOnly" dimX="0" msgId="9dd02fa8-93ce-4801-98a2-fc4a6a099e71" s3Name="1:filtervgl2std" />
+      <erpfield dimX="0" msgId="5e37be48-d07b-43e3-983d-87e218975ff6" s3Name="1:sel1" />
+      <erpfield dimX="0" msgId="a83ee5b1-bfee-47a7-8530-0f3d58b3eccf" s3Name="1:loesch" />
+      <erpfield dimX="0" msgId="92016ef1-9dc7-43f4-9562-a30ed817b5ee" s3Name="1:sel2" />
+      <erpfield access="readOnly" dimX="0" msgId="938ff18d-f59e-43a0-b388-39119669a400" s3Name="1:pdmpos" />
+      <erpfield access="readOnly" dimX="0" msgId="3dbb16eb-3347-40c5-a985-e8155e7d0638" s3Name="1:vpos" />
+      <erpfield access="readOnly" dimX="0" msgId="2293f579-8c36-4329-b0d8-31f8407fd01a" s3Name="1:elex" />
+      <erpfield access="readOnly" dimX="0" msgId="179fe460-6d82-404e-ad9a-660624d493f9" s3Name="1:elname" />
+      <erpfield access="readOnly" dimX="0" msgId="ed639de0-37c6-441b-8fed-2d2fff8dd7dd" s3Name="1:lge" />
+      <erpfield access="readOnly" dimX="0" msgId="2da22ba0-ac7a-4fe1-bfad-b635c34d7d38" s3Name="1:ellme" />
+      <erpfield access="readOnly" dimX="0" msgId="6fd0d1b6-b583-4270-97e9-b49cbd103c99" s3Name="1:breite" />
+      <erpfield access="readOnly" dimX="0" msgId="eb660a30-5f56-467b-95a6-5d3f3ef02f39" s3Name="1:elbme" />
+      <erpfield access="readOnly" dimX="0" msgId="50d01914-26fb-4b39-8bee-2ae87db7b3b2" s3Name="1:anzahl" />
+      <erpfield access="readOnly" dimX="0" msgId="d4138e12-7670-46d3-9a5f-5d13bb73a3b4" s3Name="1:melle" />
+      <erpfield access="readOnly" msgId="ipdmbomdiff_owpdm_ftable_ybelast" s3Name="1:ybelast" />
+      <erpfield access="readOnly" dimX="0" msgId="8c8c46bc-6e31-49df-9f9f-cfd8a862751f" s3Name="1:nutzen" />
+      <erpfield access="readOnly" dimX="0" msgId="fd416fc9-e6e4-41ff-ac7b-03b905e388a9" s3Name="1:bu" />
+      <erpfield access="readOnly" dimX="0" msgId="f2b5800a-b378-4fec-ba9c-97b38a4be1ab" s3Name="1:mgr" />
+      <erpfield access="readOnly" dimX="0" msgId="8f3b0e43-292d-4999-9e05-d0cc09cc7cfb" s3Name="1:lgr" />
+      <erpfield access="readOnly" dimX="0" msgId="bcee5c38-d8b4-435b-a538-c6baea937737" s3Name="1:filter" />
+      <erpfield access="readOnly" dimX="0" msgId="cf769ac5-481d-4003-b34a-382eb6828d49" s3Name="1:filtervgl" />
+      <erpfield access="readOnly" dimX="0" msgId="96e205d4-6621-480e-bd9a-c14a6156e6cb" s3Name="1:filtervgl2" />
+     </table>
+    </pane.split>
+   </layout.split>
+  </cell>
+ </layout.grid>
+</frame>
+
