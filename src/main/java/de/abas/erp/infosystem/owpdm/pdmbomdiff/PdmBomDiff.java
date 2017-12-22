@@ -20,6 +20,8 @@ import de.abas.erp.axi.event.RowEventHandler;
 import de.abas.erp.axi.event.listener.ButtonListenerAdapter;
 import de.abas.erp.db.field.editable.ButtonField;
 import de.abas.erp.db.infosystem.custom.owpdm.PdmBOMDifferences;
+import de.abas.erp.db.infosystem.custom.owpdm.PdmBOMDifferences.Row;
+import de.abas.erp.db.infosystem.custom.owpdm.PdmBOMDifferences.Table;
 import de.abas.erp.db.schema.operation.Operation;
 import de.abas.erp.db.schema.part.MeansOfProduction;
 import de.abas.erp.db.schema.part.Product;
@@ -61,6 +63,7 @@ public class PdmBomDiff extends RowEventHandler<PdmBOMDifferences, PdmBOMDiffere
 
 	private int index1 = -1;
 	private int index2 = -1;
+	private int indexInsert = 1;
 
 	/**
 	 * Constructor for handling info system header and info system row events
@@ -91,13 +94,14 @@ public class PdmBomDiff extends RowEventHandler<PdmBOMDifferences, PdmBOMDiffere
 		public void after(final ButtonEvent<PdmBOMDifferences> event) throws EventException {
 
 			super.after(event);
-
 			final PdmBOMDifferences pdmbomdiff = getCurrentObject();
 
 			if (this.field.equals(PdmBOMDifferences.META.start)) {
 				compareBOM(pdmbomdiff);
+				moveNewRowtoUpper(pdmbomdiff);
 			}
 		}
+
 	}
 
 	@Override
@@ -109,8 +113,34 @@ public class PdmBomDiff extends RowEventHandler<PdmBOMDifferences, PdmBOMDiffere
 		objectHandler.addListener(PdmBOMDifferences.META.start, new HeadButtonListener(PdmBOMDifferences.META.start));
 	}
 
-	private void compareBOM(PdmBOMDifferences pdmbomdiff) {
+	private void moveNewRowtoUpper(PdmBOMDifferences pdmbomdiff) {
+		Integer index = 1;
+		Table table = pdmbomdiff.table();
+		Iterable<Row> rows = pdmbomdiff.table().getRows();
+		Integer indexLastStdLine = lastStdLine(rows);
 
+		for (Row row : rows) {
+			if (row.getRowNo() > indexLastStdLine) {
+				table.moveRow(row.getRowNo(), index);
+				index++;
+			}
+		}
+
+	}
+
+	private Integer lastStdLine(Iterable<Row> rows) {
+		Integer rowNumber = 1;
+		for (Row row : rows) {
+			if (row.getElexstd() != null) {
+				rowNumber = row.getRowNo();
+			}
+		}
+
+		return rowNumber;
+	}
+
+	private void compareBOM(PdmBOMDifferences pdmbomdiff) {
+		this.indexInsert = 1;
 		colorBOM1Diff = pdmbomdiff.getFarbe1();
 		colorBOM2Diff = pdmbomdiff.getFarbe2();
 
@@ -217,17 +247,27 @@ public class PdmBomDiff extends RowEventHandler<PdmBOMDifferences, PdmBOMDiffere
 		while (!queue1.isEmpty() || !queue2.isEmpty()) {
 			String token1 = queue1.poll();
 			String token2 = queue2.poll();
-
+			Boolean bom1leer = false;
 			ProductionList.Row productionListRow1 = null;
 			ProductionList.Row productionListRow2 = null;
 
 			if (token1 != null) {
 				productionListRow1 = bom1.get(++this.index1);
 			}
+
 			if (token2 != null) {
 				productionListRow2 = bom2.get(++this.index2);
 			}
-			PdmBOMDifferences.Row newTableRow = insertTableRow(pdmbomdiff, productionListRow1, productionListRow2);
+
+			if (bom1 != null) {
+				if (this.index1 >= bom1.size()) {
+					bom1leer = true;
+				}
+			} else {
+				bom1leer = true;
+			}
+			PdmBOMDifferences.Row newTableRow = insertTableRow(pdmbomdiff, productionListRow1, productionListRow2,
+					bom1leer);
 
 			int codeDifference = 0;
 			if (!isCommon) {
@@ -325,11 +365,16 @@ public class PdmBomDiff extends RowEventHandler<PdmBOMDifferences, PdmBOMDiffere
 	}
 
 	private PdmBOMDifferences.Row insertTableRow(final PdmBOMDifferences pdmbomdiff,
-			final ProductionList.Row productionListRow1, final ProductionList.Row productionListRow2) {
+			final ProductionList.Row productionListRow1, final ProductionList.Row productionListRow2,
+			Boolean bom1leer) {
 
 		final PdmBOMDifferences.Row row;
-		row = pdmbomdiff.table().appendRow();
-
+		if (productionListRow1 != null && !bom1leer) {
+			row = pdmbomdiff.table().appendRow();
+		} else {
+			row = pdmbomdiff.table().insertRow(this.indexInsert);
+			this.indexInsert++;
+		}
 		if (productionListRow1 != null) {
 
 			row.setStdpdmpos(productionListRow1.getPdmPosNo());
