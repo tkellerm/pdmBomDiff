@@ -98,9 +98,250 @@ public class PdmBomDiff extends RowEventHandler<PdmBOMDifferences, PdmBOMDiffere
 
 			if (this.field.equals(PdmBOMDifferences.META.start)) {
 				compareBOM(pdmbomdiff);
-				moveNewRowtoUpper(pdmbomdiff);
+				// moveNewRowtoUpper(pdmbomdiff);
+				sortRowsWithPdmPosNumber(pdmbomdiff);
 			}
 		}
+	}
+
+	private void sortRowsWithPdmPosNumber(PdmBOMDifferences pdmbomdiff) {
+		ArrayList<PdmBOMDifferencesRow> pdmbomdiffrows = new ArrayList<PdmBOMDifferencesRow>();
+
+		Table table = pdmbomdiff.table();
+		Iterable<Row> rows = pdmbomdiff.table().getRows();
+		for (Row row : rows) {
+			PdmBOMDifferencesRow pdmdiffRow = new PdmBOMDifferencesRow(row);
+			pdmbomdiffrows.add(pdmdiffRow);
+		}
+
+		pdmbomdiffrows.sort(new PdmBomDiffRowComparator());
+
+		pdmbomdiff.table().clear();
+
+		insertTableRows(pdmbomdiffrows, pdmbomdiff);
+
+		colorTable(pdmbomdiff);
+
+	}
+
+	private void colorTable(PdmBOMDifferences pdmbomdiff) {
+		Iterable<Row> rows = pdmbomdiff.table().getRows();
+
+		for (Row row : rows) {
+			resetBOMFieldsColor(row, BOM1_FIELD_LIST);
+			resetBOMFieldsColor(row, BOM2_FIELD_LIST);
+
+			switch (row.getTdiffcode()) {
+			case 1:
+				compareElementAttributes(row);
+			case 2:
+				setBOMFieldsColor(row, BOM1_FIELD_LIST, colorBOM1Diff);
+				break;
+
+			case 3:
+				setBOMFieldsColor(row, BOM2_FIELD_LIST, colorBOM2Diff);
+				break;
+
+			default:
+				break;
+			}
+
+		}
+
+	}
+
+	private void compareElementAttributes(Row row) {
+
+		// compare production list row attributes
+		if (row.getStdpdmpos() != row.getPdmpos()) {
+			setFieldsColor(row, PdmBOMDifferences.Row.META.stdpdmpos.getName(),
+					PdmBOMDifferences.Row.META.pdmpos.getName());
+
+		}
+		if (row.getLgestd().compareTo(row.getLge()) != 0) {
+			setFieldsColor(row, PdmBOMDifferences.Row.META.lgestd.getName(), PdmBOMDifferences.Row.META.lge.getName());
+
+		}
+		if (row.getEllmestd() != row.getEllme()) {
+			setFieldsColor(row, PdmBOMDifferences.Row.META.ellmestd.getName(),
+					PdmBOMDifferences.Row.META.ellme.getName());
+
+		}
+		if (row.getBreitestd().compareTo(row.getBreite()) != 0) {
+			setFieldsColor(row, PdmBOMDifferences.Row.META.breitestd.getName(),
+					PdmBOMDifferences.Row.META.breite.getName());
+
+		}
+		if (row.getElbmestd() != row.getElbme()) {
+			setFieldsColor(row, PdmBOMDifferences.Row.META.elbmestd.getName(),
+					PdmBOMDifferences.Row.META.elbme.getName());
+
+		}
+		if (row.getAnzahlstd().compareTo(row.getAnzahl()) != 0) {
+			setFieldsColor(row, PdmBOMDifferences.Row.META.anzahlstd.getName(),
+					PdmBOMDifferences.Row.META.anzahl.getName());
+
+		}
+		if (row.getMellestd() != row.getMelle()) {
+			setFieldsColor(row, PdmBOMDifferences.Row.META.mellestd.getName(),
+					PdmBOMDifferences.Row.META.melle.getName());
+
+		}
+		if (row.getNutzenstd().compareTo(row.getNutzen()) != 0) {
+			setFieldsColor(row, PdmBOMDifferences.Row.META.nutzenstd.getName(),
+					PdmBOMDifferences.Row.META.nutzen.getName());
+
+		}
+		if (row.getBustd() != row.getBu()) {
+			setFieldsColor(row, PdmBOMDifferences.Row.META.bustd.getName(), PdmBOMDifferences.Row.META.bu.getName());
+
+		}
+		if (row.getMgrstd() != row.getMgr()) {
+			setFieldsColor(row, PdmBOMDifferences.Row.META.mgrstd.getName(), PdmBOMDifferences.Row.META.mgr.getName());
+
+		}
+		if (row.getLgrstd() != row.getLgr()) {
+			setFieldsColor(row, PdmBOMDifferences.Row.META.lgrstd.getName(), PdmBOMDifferences.Row.META.lgr.getName());
+
+		}
+		// Änderung Romaco
+		if (row.getYbelaststd() != row.getYbelast()) {
+			setFieldsColor(row, PdmBOMDifferences.Row.META.ybelaststd.getName(),
+					PdmBOMDifferences.Row.META.ybelast.getName());
+
+		}
+
+	}
+
+	private void insertTableRows(ArrayList<PdmBOMDifferencesRow> pdmbomdiffrows, PdmBOMDifferences pdmbomdiff) {
+
+		for (PdmBOMDifferencesRow pdmBOMDifferencesRow : pdmbomdiffrows) {
+			insertTableRow(pdmBOMDifferencesRow, pdmbomdiff);
+		}
+
+	}
+
+	private void insertTableRow(PdmBOMDifferencesRow pdmBOMDifferencesRow, PdmBOMDifferences pdmbomdiff) {
+		final PdmBOMDifferences.Row row;
+
+		row = pdmbomdiff.table().appendRow();
+
+		row.setStdpdmpos(pdmBOMDifferencesRow.getStdpdmpos());
+		row.setStdpdmzid(pdmBOMDifferencesRow.getStdpdmzid());
+		row.setFlzidstd(pdmBOMDifferencesRow.getFlzidstd());
+		row.setVposstd(pdmBOMDifferencesRow.getVposstd());
+		row.setElexstd(pdmBOMDifferencesRow.getElexstd());
+		row.setLgestd(pdmBOMDifferencesRow.getLgestd());
+		if (pdmBOMDifferencesRow.getEllmestd() != null) {
+			row.setEllmestd(pdmBOMDifferencesRow.getEllmestd());
+		}
+		row.setBreitestd(pdmBOMDifferencesRow.getBreitestd());
+		if (pdmBOMDifferencesRow.getElbmestd() != null) {
+			row.setElbmestd(pdmBOMDifferencesRow.getElbmestd());
+		}
+		row.setAnzahlstd(pdmBOMDifferencesRow.getAnzahlstd());
+		if (pdmBOMDifferencesRow.getMellestd() != null) {
+			row.setMellestd(pdmBOMDifferencesRow.getMellestd());
+		}
+		row.setNutzenstd(pdmBOMDifferencesRow.getNutzenstd());
+		row.setBustd(pdmBOMDifferencesRow.getBustd());
+		row.setMgrstd(pdmBOMDifferencesRow.getMgrstd());
+		row.setLgrstd(pdmBOMDifferencesRow.getLgrstd());
+
+		row.setElnamestd(pdmBOMDifferencesRow.getElnamestd());
+
+		row.setFilterstd(pdmBOMDifferencesRow.getFilterstd());
+		row.setFiltervglstd(pdmBOMDifferencesRow.getFiltervglstd());
+		row.setFiltervgl2std(pdmBOMDifferencesRow.getFiltervgl2std());
+		row.setPtextstd(pdmBOMDifferencesRow.getPtextstd());
+		row.setPverluststd(pdmBOMDifferencesRow.getPverluststd());
+
+		row.setVkpverluststd(pdmBOMDifferencesRow.getVkpverluststd());
+
+		row.setAmgestd(pdmBOMDifferencesRow.getAmgestd());
+		row.setVarstd(pdmBOMDifferencesRow.getVarstd());
+		row.setPzeitstd(pdmBOMDifferencesRow.getPzeitstd());
+		if (pdmBOMDifferencesRow.getPzeitlestd() != null) {
+			row.setPzeitlestd(pdmBOMDifferencesRow.getPzeitlestd());
+		}
+		row.setTlzeitstd(pdmBOMDifferencesRow.getTlzeitstd());
+		if (pdmBOMDifferencesRow.getTlzeitlestd() != null) {
+			row.setTlzeitlestd(pdmBOMDifferencesRow.getTlzeitlestd());
+		}
+		row.setLfbeiststd(pdmBOMDifferencesRow.isLfbeiststd());
+		row.setMzrsekstd(pdmBOMDifferencesRow.getMzrsekstd());
+		if (pdmBOMDifferencesRow.getMzrstd() != null) {
+			row.setMzrstd(pdmBOMDifferencesRow.getMzrstd());
+		}
+		row.setMzesekstd(pdmBOMDifferencesRow.getMzesekstd());
+		if (pdmBOMDifferencesRow.getMzestd() != null) {
+			row.setMzestd(pdmBOMDifferencesRow.getMzestd());
+		}
+		row.setTersatzstd(pdmBOMDifferencesRow.getTersatzstd());
+		row.setTverschltstd(pdmBOMDifferencesRow.getTverschltstd());
+		row.setTnwpflichtstd(pdmBOMDifferencesRow.getTnwpflichtstd());
+		row.setTserarchivstd(pdmBOMDifferencesRow.getTserarchivstd());
+		// Änderung Romaco
+		row.setYbelaststd(pdmBOMDifferencesRow.getYbelaststd());
+
+		row.setPdmpos(pdmBOMDifferencesRow.getPdmpos());
+		row.setPdmzid(pdmBOMDifferencesRow.getPdmzid());
+		row.setFlzid(pdmBOMDifferencesRow.getFlzid());
+		row.setVpos(pdmBOMDifferencesRow.getVpos());
+		row.setElex(pdmBOMDifferencesRow.getElex());
+		row.setLge(pdmBOMDifferencesRow.getLge());
+		if (pdmBOMDifferencesRow.getEllme() != null) {
+			row.setEllme(pdmBOMDifferencesRow.getEllme());
+		}
+		row.setBreite(pdmBOMDifferencesRow.getBreite());
+		if (pdmBOMDifferencesRow.getElbme() != null) {
+			row.setElbme(pdmBOMDifferencesRow.getElbme());
+		}
+		row.setAnzahl(pdmBOMDifferencesRow.getAnzahl());
+		if (pdmBOMDifferencesRow.getMelle() != null) {
+			row.setMelle(pdmBOMDifferencesRow.getMelle());
+		}
+		row.setNutzen(pdmBOMDifferencesRow.getNutzen());
+		row.setBu(pdmBOMDifferencesRow.getBu());
+		row.setMgr(pdmBOMDifferencesRow.getMgr());
+		row.setLgr(pdmBOMDifferencesRow.getLgr());
+
+		row.setElname(pdmBOMDifferencesRow.getElname());
+
+		row.setFilter(pdmBOMDifferencesRow.getFilter());
+		row.setFiltervgl(pdmBOMDifferencesRow.getFiltervgl());
+		row.setFiltervgl2(pdmBOMDifferencesRow.getFiltervgl2());
+		row.setPtext(pdmBOMDifferencesRow.getPtext());
+		row.setPverlust(pdmBOMDifferencesRow.getPverlust());
+
+		row.setVkpverlust(pdmBOMDifferencesRow.getVkpverlust());
+		row.setAmge(pdmBOMDifferencesRow.getAmge());
+		row.setVar(pdmBOMDifferencesRow.getVar());
+		row.setPzeit(pdmBOMDifferencesRow.getPzeit());
+		if (pdmBOMDifferencesRow.getPzeitle() != null) {
+			row.setPzeitle(pdmBOMDifferencesRow.getPzeitle());
+		}
+		row.setTlzeit(pdmBOMDifferencesRow.getTlzeit());
+		if (pdmBOMDifferencesRow.getTlzeitle() != null) {
+			row.setTlzeitle(pdmBOMDifferencesRow.getTlzeitle());
+		}
+		row.setLfbeist(pdmBOMDifferencesRow.isLfbeist());
+		row.setMzrsek(pdmBOMDifferencesRow.getMzrsek());
+		if (pdmBOMDifferencesRow.getMzr() != null) {
+			row.setMzr(pdmBOMDifferencesRow.getMzr());
+		}
+		row.setMzesek(pdmBOMDifferencesRow.getMzesek());
+		if (pdmBOMDifferencesRow.getMze() != null) {
+			row.setMze(pdmBOMDifferencesRow.getMze());
+		}
+		row.setTersatz(pdmBOMDifferencesRow.getTersatz());
+		row.setTverschlt(pdmBOMDifferencesRow.getTverschlt());
+		row.setTnwpflicht(pdmBOMDifferencesRow.getTnwpflicht());
+		row.setTserarchiv(pdmBOMDifferencesRow.getTserarchiv());
+		// Änderung Romaco
+		row.setYbelast(pdmBOMDifferencesRow.getYbelast());
+
+		row.setTdiffcode(pdmBOMDifferencesRow.getDiffcode());
 
 	}
 
@@ -113,20 +354,20 @@ public class PdmBomDiff extends RowEventHandler<PdmBOMDifferences, PdmBOMDiffere
 		objectHandler.addListener(PdmBOMDifferences.META.start, new HeadButtonListener(PdmBOMDifferences.META.start));
 	}
 
-	private void moveNewRowtoUpper(PdmBOMDifferences pdmbomdiff) {
-		Integer index = 1;
-		Table table = pdmbomdiff.table();
-		Iterable<Row> rows = pdmbomdiff.table().getRows();
-		Integer indexLastStdLine = lastStdLine(rows);
-
-		for (Row row : rows) {
-			if (row.getRowNo() > indexLastStdLine) {
-				table.moveRow(row.getRowNo(), index);
-				index++;
-			}
-		}
-
-	}
+	// private void moveNewRowtoUpper(PdmBOMDifferences pdmbomdiff) {
+	// Integer index = 1;
+	// Table table = pdmbomdiff.table();
+	// Iterable<Row> rows = pdmbomdiff.table().getRows();
+	// Integer indexLastStdLine = lastStdLine(rows);
+	//
+	// for (Row row : rows) {
+	// if (row.getRowNo() > indexLastStdLine) {
+	// table.moveRow(row.getRowNo(), index);
+	// index++;
+	// }
+	// }
+	//
+	// }
 
 	private Integer lastStdLine(Iterable<Row> rows) {
 		Integer rowNumber = 1;

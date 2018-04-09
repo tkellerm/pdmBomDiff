@@ -1,14 +1,14 @@
 plugins {
     id "java"
     id "maven-publish"
-	id "de.abas.esdk" version "0.7.4"
+	id "de.abas.esdk" version "0.9.3"
 }
 
 repositories {
     mavenLocal()
     jcenter()
     maven {url "https://plugins.gradle.org/m2/" }
-    maven { url "http://$NEXUS_HOST:$NEXUS_PORT/nexus/content/repositories/$NEXUS_NAME-SNAPSHOTS" }
+    maven { url "http://$NEXUS_HOST:$NEXUS_PORT/nexus/content/repositories/$NEXUS_NAME-SNAPSHOT" }
     maven { url "http://$NEXUS_HOST:$NEXUS_PORT/nexus/content/repositories/$NEXUS_NAME" }
     
 }
