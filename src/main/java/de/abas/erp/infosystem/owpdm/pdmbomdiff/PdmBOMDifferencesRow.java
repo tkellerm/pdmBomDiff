@@ -216,6 +216,12 @@ public class PdmBOMDifferencesRow {
 
 	}
 
+	@Override
+	public String toString() {
+		return "PdmBOMDifferencesRow [stdpdmpos=" + stdpdmpos + ", elnamestd=" + elnamestd + ", pdmpos=" + pdmpos
+				+ ", elname=" + elname + ", sortPdmPos=" + sortPdmPos + "]";
+	}
+
 	private void fillSortPdmPos(PdmBOMDifferences.Row pdmBomdiffrow) {
 		EnumDatabase dbno = null;
 		if (this.elexstd != null) {
@@ -226,7 +232,7 @@ public class PdmBOMDifferencesRow {
 
 		if (dbno != null) {
 			if (dbno.equals(EnumDatabase.Operation)) {
-				this.sortPdmPos = 10000 + pdmBomdiffrow.getRowNo();
+				this.sortPdmPos = pdmBomdiffrow.getRowNo() - 100000;
 			} else if (this.stdpdmpos == 0 && this.pdmpos == 0) {
 				this.sortPdmPos = pdmBomdiffrow.getRowNo();
 			} else if (this.stdpdmpos == 0 && this.pdmpos != 0) {

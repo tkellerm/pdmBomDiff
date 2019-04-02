@@ -8,7 +8,8 @@ public class PdmBomDiffRowComparator implements Comparator<PdmBOMDifferencesRow>
 	public int compare(PdmBOMDifferencesRow arg0, PdmBOMDifferencesRow arg1) {
 
 		if (arg0 != null && arg1 != null) {
-			return arg0.getSortpdmpos() - arg1.getSortpdmpos();
+			// return arg0.getSortpdmpos() - arg1.getSortpdmpos();
+			return arg1.getSortpdmpos() - arg0.getSortpdmpos();
 
 		} else if (arg0 != null && arg1 == null) {
 			return 1;
